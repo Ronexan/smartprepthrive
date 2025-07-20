@@ -1,0 +1,13 @@
+---
+import RootLayout from "./RootLayout.astro";
+import Header from "@/ui/astro/Header.astro";
+import Footer from "@/ui/astro/Footer.astro";
+---
+
+<RootLayout>
+  <Header />
+  <div class="mt-header-height min-h-screen">
+    <slot />
+  </div>
+  <Footer />
+</RootLayout>

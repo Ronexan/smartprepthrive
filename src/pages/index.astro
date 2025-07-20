@@ -1,0 +1,10 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+import Banner from "@/ui/react/home/Banner"
+import Summary from "@/ui/react/home/Summary"
+---
+
+<MainLayout>
+  <Banner client:idle />
+  <Summary client:idle />
+</MainLayout>

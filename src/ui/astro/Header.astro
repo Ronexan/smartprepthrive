@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets"
+
+const linkClass = "font-medium text-[0.95rem] hover:underline"
+---
+
+<header
+  id="main-header"
+  class="fixed inset-0 h-[60px] bg-white z-500 text-black flex justify-between items-center p-2
+    transition-shadow duration-300 ease-out"
+>
+  <a class="flex items-center" href="/">
+    <Image src="/logo.png" width={50} height={50} alt="Smartprep logo" />
+  </a>
+
+  <div class="flex items-center gap-4 pr-10">
+    <a class={linkClass} href="/">Home</a>
+    <a class={linkClass} href="/about-us">About Us</a>
+    <a class={linkClass} href="/our-services">Our Services</a>
+    <a class={linkClass} href="/contact">Contact</a>
+  </div>
+</header>
+
+<script>
+  const header: HTMLElement = document.getElementById("main-header")!
+
+  const onScroll = () => {
+    if (window.scrollY > 0) {
+      header.classList.add("shadow-lg")
+    }else {
+      header.classList.remove("shadow-lg")
+    }
+  }
+
+  window.addEventListener("scroll", onScroll)
+
+  onScroll()
+</script>
