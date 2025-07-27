@@ -28,7 +28,7 @@ export default function Goals() {
             <p className="font-bold text-3xl">Our Vision</p>
           </div>
           <div className="flex-1 p-2 flex justify-center items-center">
-            <p className="text-lg">
+            <p>
               To create a world where every individual, regardless of ability, is supported and included,
               with society and educational systems fully prepared to embrace neurodiversity.
             </p>
@@ -49,7 +49,7 @@ export default function Goals() {
           }}
         >
           <div className="flex-1 p-2 flex justify-center items-center">
-            <p className="text-lg">
+            <p>
               To bridge the gap in inclusive education by training educators, parents, and
               caregivers with the skills and tools necessary to support children with learning and developmental
               challenges and also offering direct Therapy Services to individuals.

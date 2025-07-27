@@ -1,21 +1,64 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import Banner from "@/ui/astro/Banner.astro";
+import { FaLocationDot } from "react-icons/fa6";
+import ContactForm from "@/ui/react/ContactForm"
+
+const contactClass = "border-2 border-primary rounded-md min-h-[200px]"
+const contactTagClass = `flex items-center gap-1 w-max max-w-[50%] p-2 bg-primary rounded-br-md text-white
+  font-bold`
+
+const contacts = [
+  {
+    type: "Address",
+    contacts: [
+      "FCT, Abuja"
+    ]
+  },
+  {
+    type: "Phone",
+    contacts: [
+      "+2348162226557",
+      "+2348140440605"
+    ]
+  },
+  {
+    type: "Email",
+    contacts: [
+      "Smartpreptx@gmail.com",
+      "Ncldnigeria@outlook.com"
+    ]
+  },
+]
 ---
 
 <MainLayout>
-  <section class="relative w-full h-[50vh] sm:h-[70vh] bg-[url('/kids.jpg')] bg-cover bg-center">
-    <div class="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
-      <h1 class="text-6xl font-bold">Contact</h1>
-    </div>
-  </section>
-  <section class="m-auto mt-10 max-w-[1100px]">
-    <h1 class="text-[2.3rem] text-primary text-center font-bold">
+  <Banner title="Contact" />
+  <section class="m-auto mt-10 max-w-[1100px] p-2">
+    <h1 class="text-[2rem] text-primary font-bold">
       Get In Touch
     </h1>
+
+    <div class="w-full grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5 ">
+      {contacts.map(contact => (
+        <div class={contactClass}>
+          <div class={contactTagClass}>
+            <span>{contact.type}</span>
+          </div>
+          <div class="p-2 text-primary font-medium text-[1.1rem]">
+            {contact.contacts.map(contactInfo => <p class="text-[1.2rem] font-bold">{contactInfo}</p>)}
+          </div>
+        </div>
+      ))}
+    </div>
   </section>
-  <section class="m-auto mt-10 max-w-[1100px]">
-    <h1 class="text-[2.3rem] text-primary text-center font-bold">
-      You can also send us a message
-    </h1>
+
+  <section class="mt-20 w-full grid grid-cols-1 sm:grid-cols-2">
+    <div class="bg-gray-50 px-2 py-3">
+      <ContactForm client:idle />
+    </div>
+    <div class="min-h-[500px]">
+      <p>Map</p>
+    </div>
   </section>
 </MainLayout>

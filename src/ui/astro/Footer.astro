@@ -5,33 +5,26 @@ import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 
-const linkClass = "block text-black text-gray-700 hover:underline"
-const iconSize = 25
+const linkClass = "block text-black text-[0.86rem] text-gray-800 hover:underline"
+const iconSize = 20
 const iconClass = "text-gray-800"
 ---
 
-<footer class="mt-5 w-full bg-gray-200 py-6 px-2">
-  <div class="flex flex-wrap justify-center items-center gap-5 w-full h-full">
-    <div class="flex-[0_1_200px] flex flex-col justify-center text-center sm:text-left items-center sm:items-start gap-1">
-      <a href="/">
-        <Image src="/logo.png" width={65} height={65} alt="Logo" />
-      </a>
-      <p class="font-medium text-[0.9rem] text-gray-700">
-        Empowering individuals with special needs
-      </p>
+<footer class="w-full bg-gray-200 py-3 px-2">
+  <div class="flex flex-wrap flex-col sm:flex-row justify-between items-center gap-4 w-full h-full">
+    <a href="/" class="flex flex-[0_1_auto] justify-center items-center flex-wrap">
+      <Image src="/logo.png" width={40} height={40} alt="Logo" />
+      <p class="font-bold text-[0.9rem]">Smartprep Special Needs</p>
+    </a>
+
+    <div class="flex-[0_1_auto] flex flex-wrap justify-center items-center gap-3">
+      <a class={linkClass} href="/">Home</a>
+      <a class={linkClass} href="/about-us">About Us</a>
+      <a class={linkClass} href="/contact">Contact</a>
+      <a class={linkClass} href="/our-services">Our Services</a>
     </div>
 
-    <div class="flex-[0_1_300px] flex flex-col justify-center items-center">
-      <p class="font-medium text-gray-700">Quick Links</p>
-      <a class={linkClass} href="#">Home</a>
-      <a class={linkClass} href="#">About Us</a>
-      <a class={linkClass} href="#">Contact</a>
-      <a class={linkClass} href="#">Our Services</a>
-    </div>
-  </div>
-  <div class="mt-6">
-    <p class="text-gray-800 font-medium">Follow Us</p>
-    <div class="flex flex-wrap items-center gap-3">
+    <div class=" flex-[0_1_auto] flex flex-wrap gap-3 justify-center items-center">
       <FaInstagram size={iconSize} className={iconClass} />
       <FaFacebook size={iconSize} className={iconClass} />
       <FaXTwitter size={iconSize} className={iconClass} />

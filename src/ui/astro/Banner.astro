@@ -1,11 +1,13 @@
-<div class="relative w-full h-[90vh] bg-[url('/therapy.jpg')] bg-cover">
-  <div class="absolute inset-0 bg-black/50">
-    <div class="p-2 w-full max-w-[800px] h-full flex flex-col justify-center text-white">
-      <h1 class="font-alab text-[2.5rem] sm:text-[3.5rem]">Welcome to Smartprep Thrive</h1>
-      <p class="text-lg">
-        Empowering individuals with special needs through personalized therapy,
-        inclusive education, and expert training.
-      </p>
-    </div>
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props
+---
+
+<section class="relative w-full h-[40vh] sm:h-[56vh] bg-[url('/kids.jpg')] bg-cover bg-center">
+  <div class="absolute inset-0 bg-black/70 flex justify-center items-center text-white">
+    <h1 class="text-6xl font-bold">{title}</h1>
   </div>
-</div>
+</section>

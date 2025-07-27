@@ -12,6 +12,7 @@ const linkClass = "font-medium text-[0.95rem] hover:underline"
 >
   <a class="flex items-center" href="/">
     <Image src="/logo.png" width={50} height={50} alt="Smartprep logo" />
+    <p class="font-bold">Smartprep Special Needs</p>
   </a>
 
   <>
@@ -22,7 +23,7 @@ const linkClass = "font-medium text-[0.95rem] hover:underline"
       <a class={linkClass} href="/contact">Contact</a>
     </nav>
     <button id="nav-button" class="sm:hidden cursor-pointer">
-      <IoIosMenu size={50} />
+      <IoIosMenu size={40} />
     </button>
   </>
   
@@ -30,7 +31,7 @@ const linkClass = "font-medium text-[0.95rem] hover:underline"
     id="nav-mobile"
     class="hidden fixed inset-0 top-[59px] z-10 bg-black/50"
   >
-    <nav class="flex flex-col items-center gap-4 p-2 bg-white rounded-bl-lg rounded-br-lg">
+    <nav class="flex flex-col items-center gap-4 p-2 pt-5 bg-white rounded-bl-lg rounded-br-lg">
       <a class={linkClass} href="/">Home</a>
       <a class={linkClass} href="/about-us">About Us</a>
       <a class={linkClass} href="/our-services">Our Services</a>
@@ -45,6 +46,19 @@ const linkClass = "font-medium text-[0.95rem] hover:underline"
   const navMobile: HTMLElement = document.getElementById("nav-mobile")!
   const smallSize = 640
   let navMobileOpen = false
+  let mouseOnHeader = false
+
+  const toggleNavMobile = (show: boolean) => {
+    if (show) {
+      navMobile.style.display = "block"
+      document.body.style.overflow = "hidden"
+      navMobileOpen = true
+    }else {
+      navMobile.style.display = "none"
+      document.body.style.overflow = "auto"
+      navMobileOpen = false
+    }
+  }
 
   const onScroll = () => {
     if (window.scrollY > 0) {
@@ -57,26 +71,30 @@ const linkClass = "font-medium text-[0.95rem] hover:underline"
   const onWinResize = () => {
     if (window.innerWidth < smallSize) {
       if (navMobileOpen) {
-        navMobile.style.display = "block"
+        toggleNavMobile(true)
       }
     }else {
-      navMobile.style.display = "none"
+      toggleNavMobile(false)
     }
   }
 
+  navMobile.addEventListener("mouseenter", () => mouseOnHeader = true)
+  navMobile.addEventListener("mouseleave", () => mouseOnHeader = false)
+
   window.addEventListener("scroll", onScroll)
   window.addEventListener("resize", onWinResize)
+  // window.addEventListener("click", () => {
+  //   if (!mouseOnHeader) {
+  //     toggleNavMobile(false)
+  //   }
+  // })
 
   navButton.addEventListener("click", () => {
-    if (!navMobileOpen) {
-      navMobile.style.display = "block"
-      navMobileOpen = true
-    }else {
-      navMobile.style.display = "none"
-      navMobileOpen = false
-    }
+    toggleNavMobile(!navMobileOpen)
   })
 
-  onScroll()
-  onWinResize()
+  document.addEventListener("DOMContentLoaded", () => {
+    onScroll()
+    onWinResize()
+  })
 </script>

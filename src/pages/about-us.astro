@@ -2,16 +2,12 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import About from "@/ui/react/about/About";
 import Goals from "@/ui/react/about/Goals";
-import Team from "@/ui/react/about/Team";
+import Banner from "@/ui/astro/Banner.astro";
 ---
 
 <MainLayout>
-  <section class="relative w-full h-[50vh] sm:h-[70vh] bg-[url('/kids.jpg')] bg-cover bg-center">
-    <div class="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
-      <h1 class="text-6xl font-bold">About Us</h1>
-    </div>
-  </section>
+  <Banner title="About Us" />
   <About client:idle />
   <Goals client:idle />
-  <Team client:idle />
+  <!-- <Team client:idle /> -->
 </MainLayout>
