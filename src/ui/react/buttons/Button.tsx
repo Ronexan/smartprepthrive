@@ -1,13 +1,16 @@
 import classNames from "classnames"
+import { IoIosArrowRoundForward } from "react-icons/io";
+
 
 type Props = {
   children: React.ReactNode;
   link?: string;
   className?: string;
   style?: React.CSSProperties;
+  arrow?: boolean | number;
 }
 
-export default function OutlineButton({ children, link, className, style }: Props) {
+export default function OutlineButton({ children, link, className, style, arrow }: Props) {
   const classname = classNames(
     `mt-3 flex items-center gap-1 py-1 px-2
       rounded-md w-max cursor-pointer transition-colors duration-200 ease-out bg-primary text-white`,

@@ -1,10 +1,22 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
-import Banner from "@/ui/react/home/Banner"
+import HeroSection from "@/ui/react/home/HeroSection"
 import Summary from "@/ui/react/home/Summary"
+import WorldClass from "@/ui/react/home/WorldClass"
+import Masterpiece from "@/ui/react/home/Masterpiece"
+import WhoWeAre from "@/ui/react/home/WhoWeAre"
+import NCLDApproved from "@/ui/react/home/NCLDApproved"
+import WhatWeDo from "@/ui/react/home/WhatWeDo"
+import CTA from "@/ui/react/home/CTA"
 ---
 
 <MainLayout>
-  <Banner client:idle />
+  <HeroSection client:load />
   <Summary client:idle />
+  <Masterpiece client:idle />
+  <WhoWeAre client:idle />
+  <WhatWeDo client:idle />
+  <WorldClass client:idle />
+  <NCLDApproved client:idle />
+  <CTA client:only="react" />
 </MainLayout>

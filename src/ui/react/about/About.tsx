@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 export default function About() {
   return (
     <section className="m-auto mt-10 max-w-[1100px] p-2">
-      <h1 className="font-bold text-center text-primary text-[2.3rem]">
+      <h1 className="font-bagel text-center text-primary text-[2.3rem]">
         Who we are
       </h1>
 
@@ -21,7 +21,7 @@ export default function About() {
         </p>
       </div>
 
-      <h1 className="mt-10 text-center font-bold text-primary text-[2.3rem]">
+      <h1 className="mt-10 text-center font-bagel text-primary text-[2.3rem]">
         What we believe
       </h1>
 

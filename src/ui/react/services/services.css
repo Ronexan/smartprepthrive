@@ -1,0 +1,29 @@
+ul li::before {
+  display: inline-block;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: var(--color-primary);
+  margin-right: 5px;
+}
+
+.bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-right: 10px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.bullet-active {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-right: 10px;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}

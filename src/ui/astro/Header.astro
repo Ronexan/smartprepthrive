@@ -2,16 +2,16 @@
 import { Image } from "astro:assets"
 import { IoIosMenu } from "react-icons/io";
 
-const linkClass = "font-medium text-[0.95rem] hover:underline"
+const linkClass = "font-medium text-[0.85rem] hover:underline"
 ---
 
 <header
   id="main-header"
-  class="fixed inset-0 h-[60px] bg-white z-500 text-black flex justify-between items-center p-2
+  class="fixed inset-0 h-header-height bg-white z-500 text-black flex justify-between items-center p-2
     transition-shadow duration-300 ease-out"
 >
   <a class="flex items-center" href="/">
-    <Image src="/logo.png" width={50} height={50} alt="Smartprep logo" />
+    <Image src="/logo.png" width={40} height={40} alt="Smartprep logo" />
     <p class="font-bold">Smartprep Special Needs</p>
   </a>
 
@@ -29,7 +29,7 @@ const linkClass = "font-medium text-[0.95rem] hover:underline"
   
   <div
     id="nav-mobile"
-    class="hidden fixed inset-0 top-[59px] z-10 bg-black/50"
+    class="hidden fixed inset-0 top-header-height z-10 bg-black/50"
   >
     <nav class="flex flex-col items-center gap-4 p-2 pt-5 bg-white rounded-bl-lg rounded-br-lg">
       <a class={linkClass} href="/">Home</a>

@@ -6,8 +6,10 @@ interface Props {
 const { title } = Astro.props
 ---
 
-<section class="relative w-full h-[40vh] sm:h-[56vh] bg-[url('/kids.jpg')] bg-cover bg-center">
-  <div class="absolute inset-0 bg-black/70 flex justify-center items-center text-white">
-    <h1 class="text-6xl font-bold">{title}</h1>
+<section class="relative w-full h-[40vh] sm:h-[46vh] bg-[url('/kids.jpg')] bg-cover bg-center">
+  <div class="absolute inset-0 bg-black/70 flex justify-center items-center text-white p-[10px_10px_50px_10px]">
+    <h1 class="text-6xl font-bagel">
+      {title}
+    </h1>
   </div>
 </section>

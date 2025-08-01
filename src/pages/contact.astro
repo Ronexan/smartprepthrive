@@ -35,7 +35,7 @@ const contacts = [
 <MainLayout>
   <Banner title="Contact" />
   <section class="m-auto mt-10 max-w-[1100px] p-2">
-    <h1 class="text-[2rem] text-primary font-bold">
+    <h1 class="text-[2rem] text-primary font-bagel">
       Get In Touch
     </h1>
 
@@ -53,12 +53,35 @@ const contacts = [
     </div>
   </section>
 
-  <section class="mt-20 w-full grid grid-cols-1 sm:grid-cols-2">
+  <section class="mt-20 w-full grid grid-cols-1 sm:grid-cols-[0.7fr_1fr]">
     <div class="bg-gray-50 px-2 py-3">
       <ContactForm client:idle />
     </div>
-    <div class="min-h-[500px]">
-      <p>Map</p>
+    <div id="map" class="h-[350px] sm:h-[650px]">
     </div>
   </section>
 </MainLayout>
+
+<style>
+  @media (max-width: 40rem) {
+    #map {
+      grid-row: 1;
+    }
+  }
+</style>
+
+<script>
+  // @ts-nocheck
+
+  let map = L.map('map').setView([51.505, -0.09], 13)
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+  let marker = L.marker([51.5, -0.09]).addTo(map);
+  let polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]
+  ]).addTo(map);
+</script>

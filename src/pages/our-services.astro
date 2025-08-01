@@ -1,8 +1,13 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import Banner from "@/ui/astro/Banner.astro";
+import Services from "@/ui/react/services/Services";
 ---
 
-<MainLayout>
+<MainLayout ti>
   <Banner title="Our Services" />
+  <section class="mt-10 mb-20 m-auto p-2">
+    <p class="text-center text-lg">We offer various services catered towards children of all backgrounds.</p>
+  </section>
+  <Services client:idle />
 </MainLayout>

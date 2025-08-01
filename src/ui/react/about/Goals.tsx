@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 
 export default function Goals() {
   return (
-    <section className="m-auto mt-12 max-w-[1100px] p-2">
-      <h1 className="text-primary font-bold text-[2.3rem]">
+    <section className="m-auto mt-12 mb-20 max-w-[1100px] p-2">
+      <h1 className="text-primary font-bold text-[2.3rem] font-bagel">
         Our Goals
       </h1>
 
