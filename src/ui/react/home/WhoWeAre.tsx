@@ -1,5 +1,4 @@
 import { motion } from "motion/react"
-import OutlineButton from "../buttons/OutlineButton"
 import Button from "../buttons/Button"
 
 export default function WhoWeAre() {

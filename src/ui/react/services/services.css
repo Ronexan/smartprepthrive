@@ -1,4 +1,24 @@
-ul li::before {
+.service-content {
+  font-size: 14px;
+}
+
+.service-content h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-family: var(--font-bagel);
+  margin: 10px 0 5px 0;
+}
+
+.service-content p {
+  margin-bottom: 10px;
+}
+
+.service-content ul {
+  margin: 0.2rem 0;
+  padding-left: 0.6rem;
+}
+
+.service-content ul li::before {
   display: inline-block;
   content: "";
   width: 8px;
@@ -6,6 +26,12 @@ ul li::before {
   border-radius: 100%;
   background-color: var(--color-primary);
   margin-right: 5px;
+}
+
+.service-content ul li .desc {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
 }
 
 .bullet {

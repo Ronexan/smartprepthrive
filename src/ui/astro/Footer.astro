@@ -1,9 +1,8 @@
 ---
 import { Image } from "astro:assets"
 import { FaInstagram } from "react-icons/fa"
-import { FaFacebook } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const linkClass = "block text-black text-[0.86rem] text-gray-800 hover:underline"
 const iconSize = 20
@@ -25,10 +24,15 @@ const iconClass = "text-gray-800"
     </div>
 
     <div class=" flex-[0_1_auto] flex flex-wrap gap-3 justify-center items-center">
-      <FaInstagram size={iconSize} className={iconClass} />
-      <FaFacebook size={iconSize} className={iconClass} />
-      <FaXTwitter size={iconSize} className={iconClass} />
-      <FaYoutube size={iconSize} className={iconClass} />
+      <a class={iconClass} href="https://www.instagram.com/smartpreptx" target="_blank">
+        <FaInstagram size={iconSize} />
+      </a>
+      <a class={iconClass} href="https://wa.me/2348162226557" target="_blank">
+        <FaWhatsapp size={iconSize} />
+      </a>
+      <a class={iconClass} href="https://www.linkedin.com/in/j-j-emmanuel-johnny-akpojaro-9394a25b" target="_blank">
+        <FaLinkedin size={iconSize} />
+      </a>
     </div>
   </div>
 </footer>

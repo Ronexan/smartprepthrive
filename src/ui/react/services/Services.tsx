@@ -1,8 +1,9 @@
 import { motion } from "motion/react"
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { IoPerson } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
+import { FaLocationDot } from "react-icons/fa6";
 import "./services.css"
+import services from "./data"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
@@ -12,94 +13,36 @@ import "swiper/css/pagination"
 
 export default function Services() {
   const ulClassname = "my-4 pl-3"
+
   return (
     <section className="p-2">
-      <div className="m-auto mb-10 w-full max-w-[1100px] grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-4">
-        <Service title="Special Needs Education Training">
-          <p>Our curriculum and training is powered, approved and certified by:</p>
-          <ul className={ulClassname}>
-            <li>The national center for learning disabilities(NCLD), USA.</li>
-            <li>International disability alliance (IDA)</li>
-            <li>Inclusion International</li>
-          </ul>
-          <p>Our certificates are globally recognised and accepted.</p>
-          <h2></h2>
+      {services.map(service => (
+        <Service title={service.title} id={service.id} image={service.image} reviews={service?.reviews}>
+          {service.body}
         </Service>
-        <Service title="Direct Therapy Intervention Service">
-          <p>For schools and private individuals. Our offered services here are:</p>
-          <ul className={ulClassname}>
-            <li>Identification and assessment of disabilities</li>
-            <li>Management of Behavioural disorders</li>
-            <li>Sensory integration</li>
-            <li>Cognitive therapy</li>
-            <li>ABA therapy</li>
-          </ul>
-          <p>Our therapists have been duly trained and screened socially and security wise just to check the box of the safety of your wards..</p>
-        </Service>
-        <Service title="Handwriting Intervention services" image="/kid-writing.jpg">
-          <p>
-            Made in mind for children struggling in writing skills. We help train them to perform well
-            in writing despite limitations.
-          </p>
-          <ul className={ulClassname}>
-            <li>Identification and assessment of disabilities</li>
-            <li>Management of Behavioural disorders</li>
-            <li>Sensory integration</li>
-            <li>Cognitive therapy</li>
-            <li>ABA therapy</li>
-          </ul>
-          <p>Our therapists have been duly trained and screened socially and security wise just to check the box of the safety of your wards..</p>
-        </Service>
-        <Service title="School Consultancy" image="/school.jpg">
-          <p>
-            We offer school consultancy services such as:
-          </p>
-          <ul className={ulClassname}>
-            <li>SEN unit setup and management</li>
-            <li>SEN Evaluation and assessment of learners</li>
-            <li>Individualised Educational Plan(IEP) development.</li>
-            <li>Training of staff on SEN matters</li>
-          </ul>
-        </Service>
-        <Service title="Homeschooling Services" image="/school.jpg">
-          <p>
-            We offer school consultancy services such as:
-          </p>
-          <ul className={ulClassname}>
-            <li>SEN unit setup and management</li>
-            <li>SEN Evaluation and assessment of learners</li>
-            <li>Individualised Educational Plan(IEP) development.</li>
-            <li>Training of staff on SEN matters</li>
-          </ul>
-        </Service>
-        <Service title="Parent Role-Playing Services">
-          <p>
-            We offer school consultancy services such as:
-          </p>
-          <ul className={ulClassname}>
-            <li>SEN unit setup and management</li>
-            <li>SEN Evaluation and assessment of learners</li>
-            <li>Individualised Educational Plan(IEP) development.</li>
-            <li>Training of staff on SEN matters</li>
-          </ul>
-        </Service>
-      </div>
+      ))}
     </section>
   )
 }
 
 function Service({
   title,
+  id,
   image,
-  children
+  children,
+  reviews
 }: {
   title: string;
+  id?: string;
   image?: string;
-  children: React.ReactNode
+  children: React.ReactNode;
+  reviews?: any[]
 }) {
   return (
     <motion.div
-      className="border-2 border-primary overflow-hidden rounded-md flex flex-col"
+      id={id}
+      className="border-2 border-primary overflow-hidden rounded-md flex flex-col m-auto
+        max-w-[750px] shadow-lg mb-20"
       initial={{ translateY: 100, opacity: 0 }}
       whileInView={{ translateY: 0, opacity: 1 }}
       viewport={{
@@ -116,17 +59,17 @@ function Service({
           <h1 className="font-bagel text-[2.6rem] text-primary">
             {title}
           </h1>
-          <div className="">
+          <div className="service-content">
             {children}
           </div>
         </div>
-        <Review />
+        {reviews && <Review reviews={reviews} />}
       </div>
     </motion.div>
   )
 }
 
-function Review() {
+function Review({ reviews }: { reviews: any[] }) {
   const slideClassname = `bg-gray-100 rounded-md py-2 px-[25px]`
 
   return (
@@ -134,8 +77,10 @@ function Review() {
       <h2 className="font-bagel text-primary text-lg mb-1 p-2">Reviews</h2>
 
       <Swiper
-        className="relative w-full h-[250px] px-[20px]"
+        className="relative w-full h-[350px] sm:h-[250px] px-[20px]"
         modules={[ Navigation, Pagination ]}
+        autoplay={true}
+        loop={true}
         pagination={{
           clickable: true,
           bulletClass: "bullet",
@@ -150,18 +95,19 @@ function Review() {
           padding: "0 10px"
         }}
       >
-        {Array.from({ length: 3 }).map(_ => (
+        {reviews.map(review => (
           <SwiperSlide className={slideClassname}>
-            <div className="m-auto max-w-[70%] h-full flex flex-col justify-center">
+            <div className="m-auto px-2 h-full flex flex-col justify-center">
               <div className="flex items-center gap-1">
                 <IoPersonCircleOutline size={28} />
-                <span className="font-bold">User</span>
+                <span className="font-bold">{review.name || "Reviewer"}</span>
               </div>
-              <p className="text-[0.9rem]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Duis suscipit ut mi pellentesque interdum. Pellentesque et ipsum imperdiet,
-                accumsan urna sit amet, iaculis purus. Etiam nec arcu tristique, elementum dui eget,
-                luctus ante. Suspendisse sollicitudin enim.
+              {review.location && <div className="flex items-center gap-1 text-black/70 pl-[2px]">
+                <FaLocationDot size={16} />
+                <span className="text-[0.8rem]">{review.location}</span>
+              </div>}
+              <p className="text-[0.95rem] px-2">
+                {review.review}
               </p>
             </div>
           </SwiperSlide>
