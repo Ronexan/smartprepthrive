@@ -13,7 +13,7 @@ export default function NCLDApproved() {
         }}
         viewport={{ once: true }}
       >
-        <img className="w-full h-[250px] rounded-md object-contain" src="/approved.jpeg" />
+        <img className="w-full h-[250px] rounded-md object-contain" src="/aligned.jpg" />
       </motion.div>
       <motion.div
         className="flex-1 pt-2"
@@ -32,12 +32,15 @@ export default function NCLDApproved() {
           }}
         >
           <h1 className="text-[2.8rem] font-bagel text-transparent">
-            Officially Approved
+            In Alignment with Global Best Practices
           </h1>
         </div>
         <p className="text-[1.05rem]">
-          We are officially approved by the NCLD (National Center For Learning Disabilities)
-          and IDA (International Disabilities Alliance) SEN Africa Training Facilitator.
+          At SmartPrep, we are committed to delivering excellence in special needs education.
+          In preference to global best practices, we align our training frameworks and methodologies
+          with the standards of the National Center for Learning Disabilities (NCLD).
+          Their globally recognized models and evidence-based practices serve as a benchmark for the
+          quality and relevance of our programs.
         </p>
       </motion.div>
     </section>

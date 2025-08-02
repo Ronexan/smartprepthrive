@@ -199,8 +199,8 @@ export default [
       {
         name: "Mr. Femi",
         location: "Ibadan",
-        review: `I just wanted to say THANK YOU 🙏🏽 The facilitator you sent is so knowledgeable and patient.
-          She's helping us adjust our classroom approach and the kids are responding well already. We're grateful for your support!`
+        review: `Honestly I didn't believe online therapy sessions would work, but your team has proved me wrong.
+          Our daughter now joins group play at school, something we thought might never happen. God bless SmartPrepTX. ❤`
       },
       {
         name: "Pastor Mrs. Mercy",

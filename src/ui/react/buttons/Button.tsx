@@ -7,10 +7,11 @@ type Props = {
   link?: string;
   className?: string;
   style?: React.CSSProperties;
+  target?: string;
   arrow?: boolean | number;
 }
 
-export default function OutlineButton({ children, link, className, style, arrow }: Props) {
+export default function OutlineButton({ children, link, className, style, target, arrow }: Props) {
   const classname = classNames(
     `mt-3 flex items-center gap-1 py-1 px-2
       rounded-md w-max cursor-pointer transition-colors duration-200 ease-out bg-primary text-white`,
@@ -21,6 +22,7 @@ export default function OutlineButton({ children, link, className, style, arrow 
     <a
       className={classname}
       href={link}
+      target={target}
       style={style}
     >
       {children}

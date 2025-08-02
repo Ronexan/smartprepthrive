@@ -1,6 +1,7 @@
 import Button from "@/ui/react/buttons/Button"
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useMedia } from "react-use"
+import { whatsapp } from "@/lib/contacts.json"
 
 export default function CTA() {
   const isSmall = useMedia('(max-width: 640px)')
@@ -8,7 +9,7 @@ export default function CTA() {
 
   return (
     <section
-      className="mt-20 w-full min-h-[350px]"
+      className="mt-20 w-full min-h-[300px]"
       style={{
         background: "url('/boy-on-bed.jpg') no-repeat",
         backgroundSize: "cover",
@@ -30,7 +31,7 @@ export default function CTA() {
         <p>
           Reach out to us now to see what we can do for you loved one.
         </p>
-        <Button>
+        <Button link={whatsapp} target="_blank">
           <span>Reach Out</span>
           <IoIosArrowRoundForward size={30} />
         </Button>

@@ -12,8 +12,6 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 
 export default function Services() {
-  const ulClassname = "my-4 pl-3"
-
   return (
     <section className="p-2">
       {services.map(service => (

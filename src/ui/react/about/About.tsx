@@ -9,7 +9,7 @@ export default function About() {
 
       <div className="max-w-[900px] m-auto text-center">
         <p>
-          SmartPrep Thrive is a leading provider of specialized education and therapy services dedicated
+          Smartprep Special Needs Therapeutics is a leading provider of specialized education and therapy services dedicated
           to empowering individuals with special needs. Our mission is to bridge the gap in inclusive education
           by training educators, parents, and caregivers with the skills and tools necessary to support children
           with learning and developmental challenges and also offering direct Therapy Services to individuals.
@@ -27,7 +27,7 @@ export default function About() {
 
       <div className="max-w-[900px] m-auto">
         <p className="text-center">
-          At Smartprep Thrive, we believe that:
+          At Smartprep Special Needs Therapeutics, we believe that:
         </p>
 
         <div

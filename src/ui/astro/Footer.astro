@@ -3,6 +3,7 @@ import { Image } from "astro:assets"
 import { FaInstagram } from "react-icons/fa"
 import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import contacts from "@/lib/contacts.json"
 
 const linkClass = "block text-black text-[0.86rem] text-gray-800 hover:underline"
 const iconSize = 20
@@ -13,7 +14,7 @@ const iconClass = "text-gray-800"
   <div class="flex flex-wrap flex-col sm:flex-row justify-between items-center gap-4 w-full h-full">
     <a href="/" class="flex flex-[0_1_auto] justify-center items-center flex-wrap">
       <Image src="/logo.png" width={40} height={40} alt="Logo" />
-      <p class="font-bold text-[0.9rem]">Smartprep Special Needs</p>
+      <p class="font-bold text-[0.9rem]">Smartprep Special Needs Therapeutics</p>
     </a>
 
     <div class="flex-[0_1_auto] flex flex-wrap justify-center items-center gap-3">
@@ -24,13 +25,13 @@ const iconClass = "text-gray-800"
     </div>
 
     <div class=" flex-[0_1_auto] flex flex-wrap gap-3 justify-center items-center">
-      <a class={iconClass} href="https://www.instagram.com/smartpreptx" target="_blank">
+      <a class={iconClass} href={contacts.instagram} target="_blank">
         <FaInstagram size={iconSize} />
       </a>
-      <a class={iconClass} href="https://wa.me/2348162226557" target="_blank">
+      <a class={iconClass} href={contacts.whatsapp} target="_blank">
         <FaWhatsapp size={iconSize} />
       </a>
-      <a class={iconClass} href="https://www.linkedin.com/in/j-j-emmanuel-johnny-akpojaro-9394a25b" target="_blank">
+      <a class={iconClass} href={contacts.linkedin} target="_blank">
         <FaLinkedin size={iconSize} />
       </a>
     </div>
