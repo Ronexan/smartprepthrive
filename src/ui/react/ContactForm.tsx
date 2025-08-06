@@ -1,5 +1,6 @@
 import { useForm, type SubmitHandler } from "react-hook-form"
 import { useState } from "react"
+import axios from "axios"
 
 type Input = {
   name: string;
@@ -11,22 +12,38 @@ type Input = {
 export default function ContactForm() {
   const [ submitting, setSubmitting ] = useState(false)
   const [ success, setSuccess ] = useState(false)
-  const { register, handleSubmit, formState: { isSubmitting } } = useForm<Input>()
+  const [ error, setError ] = useState("")
+  const { register, handleSubmit, formState: { isSubmitting }, getValues } = useForm<Input>()
   const inputClassname = `block w-full border border-black focus:border-primary rounded-sm
     bg-transparent outline-none mb-4 p-[6px_10px] disabled:opacity-50 text-[0.9rem]`
   const labelClassname = `font-bold text-[0.95rem] after:content-['*'] after:text-red-500`
 
-  const onFormSubmit: SubmitHandler<Input> = (data) => {
+  const onFormSubmit: SubmitHandler<Input> = async (data) => {
     setSubmitting(true)
-    setTimeout(() => {
-      setSubmitting(false)
+    
+    try {
+      const response = await axios(
+        "/api/contact",
+        {
+          method: "post",
+          data: getValues()
+        }
+      )
+
+      console.log(response.data)
+
       setSuccess(true)
-    }, 2000)
+    }catch (e: any) {
+      console.log(e)
+      setError(e.response.data.error)
+    }finally {
+      setSubmitting(false)
+    }
   }
 
   if (success) return (
-    <div className="m-auto pb-10">
-      <h1 className="text-[1.6rem] text-primary font-bold font-bagel">Message sent</h1>
+    <div className="m-auto pb-10 flex flex-col justify-center h-full">
+      <h1 className="text-[1.6rem] text-primary font-bagel">Message sent</h1>
       <p>Thank you for your message. We'll reply to you soon.</p>
     </div>
   )
@@ -61,6 +78,8 @@ export default function ContactForm() {
       <button className="py-2 px-3 rounded-md text-white bg-primary cursor-pointer text-[0.9rem] disabled:opacity-50">
         Send
       </button>
+
+      {error && <p className="text-[0.8rem] text-red-500 p-2">{error}</p>}
     </form>
   )
 }

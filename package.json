@@ -15,8 +15,10 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "astro": "5.11.1",
+    "axios": "^1.11.0",
     "classnames": "^2.5.1",
     "leaflet": "^1.9.4",
+    "mjml": "^4.15.3",
     "motion": "^12.23.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -26,5 +28,8 @@
     "react-use": "^17.6.0",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/mjml": "^4.7.4"
   }
 }
