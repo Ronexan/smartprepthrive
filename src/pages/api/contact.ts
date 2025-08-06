@@ -4,8 +4,6 @@ import axios from "axios";
 
 export const prerender = false
 
-console.log(import.meta.env.BREVO_API_KEY)
-
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json()
