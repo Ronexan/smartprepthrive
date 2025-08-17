@@ -104,7 +104,7 @@ function Review({ reviews }: { reviews: any[] }) {
                 <FaLocationDot size={16} />
                 <span className="text-[0.8rem]">{review.location}</span>
               </div>}
-              <p className="text-[0.95rem] px-2">
+              <p className="text-[0.95rem] px-2 italic">
                 {review.review}
               </p>
             </div>

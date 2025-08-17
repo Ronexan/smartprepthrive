@@ -4,8 +4,8 @@ export default function Masterpiece() {
   return (
     <motion.section
       className="mt-20 mb-5 m-auto max-w-[1200px] p-2"
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, translateY: 50 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
       transition={{
         duration: 0.6,
         ease: "easeInOut"
